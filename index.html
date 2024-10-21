@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>JavaScript Cheat Sheet</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="section">
+                <h2 onclick="toggleSection('browser-js')">Браузерный JavaScript</h2>
+                <div id="browser-js" class="content">
+                    <ul>
+                        <li>
+                            <strong>document.getElementById():</strong> Возвращает элемент по его ID.
+                            <pre>let element = document.getElementById('myId'); console.log(element);</pre>
+                        </li>
+                        <li>
+                            <strong>querySelector():</strong> Возвращает первый элемент, соответствующий указанному
+                            CSS-селектору.
+                            <pre>let firstDiv = document.querySelector('div'); console.log(firstDiv);</pre>
+                        </li>
+                        <li>
+                            <strong>addEventListener():</strong> Добавляет обработчик события на элемент.
+                            <pre>element.addEventListener('click', () => { console.log('Clicked!'); });</pre>
+                        </li>
+                        <li>
+                            <strong>setTimeout():</strong> Запускает функцию через заданный промежуток времени.
+                            <pre>setTimeout(() => { console.log('Hello after 1 second'); }, 1000);</pre>
+                        </li>
+                        <li>
+                            <strong>setInterval():</strong> Выполняет функцию через определенные интервалы времени.
+                            <pre>let intervalId = setInterval(() => { console.log('Every second'); }, 1000);</pre>
+                        </li>
+                        <li>
+                            <strong>fetch():</strong> Выполняет HTTP-запрос для получения данных.
+                            <pre>fetch('https://api.example.com/data')<br>    .then(response => response.json())<br>    .then(data => console.log(data));</pre>
+                        </li>
+                        <li>
+                            <strong>localStorage:</strong> Позволяет сохранять данные в браузере без срока действия.
+                            <pre>localStorage.setItem('key', 'value');<br>console.log(localStorage.getItem('key')); // 'value'</pre>
+                        </li>
+                        <li>
+                            <strong>sessionStorage:</strong> Позволяет сохранять данные в браузере, которые будут
+                            доступны только в рамках одной сессии.
+                            <pre>sessionStorage.setItem('key', 'value');<br>console.log(sessionStorage.getItem('key')); // 'value'</pre>
+                        </li>
+                        <li>
+                            <strong>console.log():</strong> Выводит информацию в консоль браузера.
+                            <pre>console.log('Hello, world!');</pre>
+                        </li>
+                        <li>
+                            <strong>alert():</strong> Отображает диалоговое окно с сообщением.
+                            <pre>alert('Hello, world!');</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 onclick="toggleSection('numbers')">Работа с числами</h2>
+                <div id="numbers" class="content">
+                    <ul>
+                        <li>
+                            <strong>NaN:</strong> "Не число", возникает, если результат операции не является числом.
+                            <pre>console.log(0 / 0); // NaN</pre>
+                        </li>
+                        <li>
+                            <strong>Infinity:</strong> Бесконечность (положительная или отрицательная).
+                            <pre>console.log(1 / 0); // Infinity</pre>
+                        </li>
+                        <li>
+                            <strong>toFixed():</strong> Форматирует число с заданным количеством десятичных знаков.
+                            <pre>console.log((2.4567).toFixed(2)); // "2.46"</pre>
+                        </li>
+                        <li>
+                            <strong>Math:</strong> Математический объект с функциями.
+                            <strong>Math.round()</strong>: округление.
+                            <pre>console.log(Math.round(2.6)); // 3</pre>
+                        </li>
+                        <li>
+                            <strong>parseFloat(), parseInt():</strong> Преобразуют строку в число.
+                            <pre>console.log(parseInt("42px")); // 42</pre>
+                        </li>
+                        <li>
+                            <strong>isNaN():</strong> Проверяет, является ли значение NaN.
+                            <pre>console.log(isNaN("Hello")); // true</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2 onclick="toggleSection('strings')">Работа со строками</h2>
+                <div id="strings" class="content">
+                    <ul>
+                        <li>
+                            <strong>trim():</strong> Убирает пробелы с обеих сторон строки.
+                            <pre>console.log("  Hello  ".trim()); // "Hello"</pre>
+                        </li>
+                        <li>
+                            <strong>split():</strong> Разбивает строку на массив подстрок.
+                            <pre>console.log("a,b,c".split(",")); // ["a", "b", "c"]</pre>
+                        </li>
+                        <li>
+                            <strong>replace():</strong> Заменяет часть строки на другую.
+                            <pre>console.log("Hello World".replace("World", "JavaScript")); // "Hello JavaScript"</pre>
+                        </li>
+                        <li>
+                            <strong>length:</strong> Возвращает длину строки.
+                            <pre>console.log("JavaScript".length); // 10</pre>
+                        </li>
+                        <li>
+                            <strong>toLowerCase(), toUpperCase():</strong> Преобразуют строку в нижний или верхний
+                            регистр.
+                            <pre>console.log("Hello".toUpperCase()); // "HELLO"</pre>
+                        </li>
+                        <li>
+                            <strong>includes():</strong> Проверяет, содержит ли строка указанное значение.
+                            <pre>console.log("JavaScript".includes("Script")); // true</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2 onclick="toggleSection('objects')">Работа с объектами</h2>
+                <div id="objects" class="content">
+                    <ul>
+                        <li>
+                            <strong>Object.keys():</strong> Возвращает массив ключей объекта.
+                            <pre>const obj = {a: 1, b: 2}; console.log(Object.keys(obj)); // ["a", "b"]</pre>
+                        </li>
+                        <li>
+                            <strong>Object.values():</strong> Возвращает массив значений объекта.
+                            <pre>console.log(Object.values(obj)); // [1, 2]</pre>
+                        </li>
+                        <li>
+                            <strong>Object.entries():</strong> Возвращает массив пар [ключ, значение].
+                            <pre>console.log(Object.entries(obj)); // [["a", 1], ["b", 2]]</pre>
+                        </li>
+                        <li>
+                            <strong>hasOwnProperty():</strong> Проверяет, есть ли свойство у объекта.
+                            <pre>console.log(obj.hasOwnProperty("a")); // true</pre>
+                        </li>
+                        <li>
+                            <strong>for...in:</strong> Перебирает свойства объекта.
+                            <pre>for (let key in obj) { console.log(key); }</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2 onclick="toggleSection('arrays')">Работа с массивами</h2>
+                <div id="arrays" class="content">
+                    <ul>
+                        <li>
+                            <strong>Array.isArray():</strong> Проверяет, является ли значение массивом.
+                            <pre>console.log(Array.isArray([1, 2, 3])); // true</pre>
+                        </li>
+                        <li>
+                            <strong>push():</strong> Добавляет элемент в конец массива.
+                            <pre>let arr = [1, 2]; arr.push(3); console.log(arr); // [1, 2, 3]</pre>
+                        </li>
+                        <li>
+                            <strong>pop():</strong> Удаляет последний элемент из массива и возвращает его.
+                            <pre>let last = arr.pop(); console.log(last); // 3</pre>
+                        </li>
+                        <li>
+                            <strong>shift():</strong> Удаляет первый элемент из массива и возвращает его.
+                            <pre>let first = arr.shift(); console.log(first); // 1</pre>
+                        </li>
+                        <li>
+                            <strong>unshift():</strong> Добавляет элемент в начало массива.
+                            <pre>arr.unshift(0); console.log(arr); // [0, 1, 2]</pre>
+                        </li>
+                        <li>
+                            <strong>forEach():</strong> Выполняет заданную функцию для каждого элемента массива.
+                            <pre>arr.forEach(num => console.log(num));</pre>
+                        </li>
+                        <li>
+                            <strong>map():</strong> Создает новый массив, заполняя его результатами вызова указанной
+                            функции для каждого элемента.
+                            <pre>let doubled = arr.map(num => num * 2); console.log(doubled); // [0, 2, 4]</pre>
+                        </li>
+                        <li>
+                            <strong>filter():</strong> Создает новый массив с элементами, которые прошли проверку
+                            заданной функции.
+                            <pre>let evenNumbers = arr.filter(num => num % 2 === 0); console.log(evenNumbers); // [0, 2]</pre>
+                        </li>
+                        <li>
+                            <strong>find():</strong> Возвращает первое значение, удовлетворяющее условию, заданному в
+                            функции.
+                            <pre>let found = arr.find(num => num > 1); console.log(found); // 2</pre>
+                        </li>
+                        <li>
+                            <strong>some():</strong> Проверяет, удовлетворяет ли хотя бы один элемент массива условию,
+                            заданному в функции.
+                            <pre>let hasEven = arr.some(num => num % 2 === 0); console.log(hasEven); // true</pre>
+                        </li>
+                        <li>
+                            <strong>reduce():</strong> Применяет функцию к аккумулятору и каждому элементу массива
+                            (слева направо) для уменьшения его до одного значения.
+                            <pre>let sum = arr.reduce((acc, num) => acc + num, 0); console.log(sum); // 0</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 onclick="toggleSection('date')">Дата/время</h2>
+                <div id="date" class="content">
+                    <ul>
+                        <li>
+                            <strong>getFullYear(), getMonth(), getDate():</strong> Получают части даты.
+                            <pre>let date = new Date(); console.log(date.getFullYear());</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2 onclick="toggleSection('async')">Асинхронность</h2>
+                <div id="async" class="content">
+                    <ul>
+                        <li>
+                            <strong>Promise:</strong> Объект асинхронной операции.
+                            <pre>let promise = new Promise((resolve, reject) => { resolve('Done!'); });</pre>
+                        </li>
+                        <li>
+                            <strong>async/await:</strong> Пишем асинхронный код как синхронный.
+                            <pre>async function asyncFunc() { let result = await promise; console.log(result); }</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2 onclick="toggleSection('timers')">Таймеры</h2>
+                <div id="timers" class="content">
+                    <ul>
+                        <li>
+                            <strong>setTimeout():</strong> Выполняет функцию через определённое время.
+                            <pre>setTimeout(() => console.log("Hello"), 1000);</pre>
+                        </li>
+                        <li>
+                            <strong>setInterval():</strong> Повторяет выполнение функции с заданным интервалом.
+                            <pre>setInterval(() => console.log("Tick"), 1000);</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2 onclick="toggleSection('optionalChaining')">Оператор ?</h2>
+                <div id="optionalChaining" class="content">
+                    <ul>
+                        <li>
+                            <strong>?</strong>: Позволяет безопасно обращаться к вложенным свойствам.
+                            <pre>let obj = { a: { b: { c: 1 } } }; console.log(obj?.a?.b?.c); // 1</pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

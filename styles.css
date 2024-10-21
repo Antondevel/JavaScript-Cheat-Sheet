@@ -1,0 +1,90 @@
+body {
+    background-color: #121212;
+    /* Темный фон */
+    color: #ffffff;
+    /* Светлый текст */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ffcc00;
+    /* Цвет заголовка */
+}
+
+h2 {
+    cursor: pointer;
+    margin: 15px 0;
+    color: #ffcc00;
+    /* Цвет заголовков секций */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #333;
+    /* Граница секций */
+    border-radius: 8px;
+}
+
+.content {
+    max-height: 0;
+    /* Скрываем контент по умолчанию */
+    overflow: hidden;
+    /* Скрываем переполнение */
+    transition: max-height 0.3s ease-out;
+    /* Плавный переход */
+    margin-top: 10px;
+    /* Отступ сверху */
+}
+
+ul {
+    list-style: none;
+    /* Убираем маркеры списка */
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+pre {
+    background-color: #1e1e1e;
+    /* Темный фон для кода */
+    color: #f8f8f2;
+    /* Светлый цвет текста в коде */
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    /* Горизонтальная прокрутка для длинных строк */
+}
+
+/* Добавляем выделение для методов и примеров */
+strong {
+    color: #66d9ef;
+    /* Цвет методов */
+}
+
+code {
+    color: #ff79c6;
+    /* Цвет примеров */
+}
+
+/* Класс для открытия контента */
+.open {
+    max-height: 500px;
+    /* Максимальная высота для плавного перехода */
+    transition: max-height 0.3s ease-in;
+    /* Плавный переход при открытии */
+}
