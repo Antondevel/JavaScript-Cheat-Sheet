@@ -231,12 +231,37 @@
                         <li>
                             <strong>map():</strong> Создает новый массив, заполняя его результатами вызова указанной
                             функции для каждого элемента.
-                            <pre>let doubled = arr.map(num => num * 2); console.log(doubled); // [0, 2, 4]</pre>
+                            <pre>const products = [
+                                { name: 'Laptop', price: 1000 },
+                                { name: 'Phone', price: 500 },
+                                { name: 'Tablet', price: 300 },
+                              ];
+                              
+                              // Используем map() для создания нового массива с именами продуктов
+                              const productNames = products.map(product => product.name);
+                              
+                              console.log(productNames); // ['Laptop', 'Phone', 'Tablet']
+                              
+                                </pre>
                         </li>
                         <li>
                             <strong>filter():</strong> Создает новый массив с элементами, которые прошли проверку
                             заданной функции.
-                            <pre>let evenNumbers = arr.filter(num => num % 2 === 0); console.log(evenNumbers); // [0, 2]</pre>
+                            <pre>const students = [
+                                { name: 'Alice', age: 22 },
+                                { name: 'Bob', age: 17 },
+                                { name: 'Charlie', age: 19 },
+                                { name: 'David', age: 15 },
+                              ];
+                              
+                              // Сначала отфильтруем студентов старше 18 лет
+                              const adults = students.filter(student => student.age > 18);
+                              
+                              // Теперь получим массив имен этих студентов
+                              const adultNames = adults.map(adult => adult.name);
+                              
+                              console.log(adultNames); // ['Alice', 'Charlie']
+                              </pre>
                         </li>
                         <li>
                             <strong>find():</strong> Возвращает первое значение, удовлетворяющее условию, заданному в
