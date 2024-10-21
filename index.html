@@ -226,7 +226,30 @@
                         </li>
                         <li>
                             <strong>forEach():</strong> Выполняет заданную функцию для каждого элемента массива.
-                            <pre>arr.forEach(num => console.log(num));</pre>
+                            <pre>
+                                const fruits = ["apple", "banana", "cherry", "date"];
+
+                                fruits.forEach((fruit, index) => {
+                                  console.log(`Fruit ${index + 1}: ${fruit}`);
+                                });
+                                
+                                // Вывод:
+                                // Fruit 1: apple
+                                // Fruit 2: banana
+                                // Fruit 3: cherry
+                                // Fruit 4: date
+                                </pre>
+
+                            <pre>const numbers = [1, 2, 3, 4, 5];
+                                    let sum = 0;
+                                    
+                                    numbers.forEach(number => {
+                                      sum += number;
+                                    });
+                                    
+                                    console.log(`Сумма чисел: ${sum}`); 
+                                    // Вывод: Сумма чисел: 15
+                                    </pre>
                         </li>
                         <li>
                             <strong>map():</strong> Создает новый массив, заполняя его результатами вызова указанной
