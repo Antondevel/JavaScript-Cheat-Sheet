@@ -269,12 +269,35 @@
                         <li>
                             <strong>find():</strong> Возвращает первое значение, удовлетворяющее условию, заданному в
                             функции.
-                            <pre>let found = arr.find(num => num > 1); console.log(found); // 2</pre>
+                            <pre>
+                                const users = [
+                                    { name: "John", age: 25 },
+                                    { name: "Alice", age: 30 },
+                                    { name: "Bob", age: 35 }
+                                    ];
+
+                                const foundUser = users.find(user => user.age > 30);
+
+                                console.log(foundUser); 
+                                // Вывод: { name: "Bob", age: 35 }
+
+                            </pre>
                         </li>
                         <li>
                             <strong>some():</strong> Проверяет, удовлетворяет ли хотя бы один элемент массива условию,
                             заданному в функции.
-                            <pre>let hasEven = arr.some(num => num % 2 === 0); console.log(hasEven); // true</pre>
+                            <pre>
+                                const users = [
+                                    { name: "John", active: false },
+                                    { name: "Alice", active: true },
+                                    { name: "Bob", active: false }
+                                    ];
+
+                                    const hasActiveUser = users.some(user => user.active);
+
+                                    console.log(hasActiveUser); 
+                                    // Вывод: true
+                                </pre>
                         </li>
                         <li>
                             <strong>reduce():</strong> Применяет функцию к аккумулятору и каждому элементу массива

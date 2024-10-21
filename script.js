@@ -18,3 +18,6 @@ function toggleSection(sectionId) {
         content.style.maxHeight = content.scrollHeight + "px"; // Устанавливаем max-height на высоту контента
     }
 }
+
+
+
