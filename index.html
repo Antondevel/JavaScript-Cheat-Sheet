@@ -129,9 +129,50 @@
                             <strong>includes():</strong> Проверяет, содержит ли строка указанное значение.
                             <pre>console.log("JavaScript".includes("Script")); // true</pre>
                         </li>
+                        <li>
+                            <strong>charAt():</strong> Возвращает символ по указанному индексу.
+                            <pre>console.log("Hello".charAt(1)); // "e"</pre>
+                        </li>
+                        <li>
+                            <strong>indexOf():</strong> Возвращает индекс первого вхождения подстроки.
+                            <pre>console.log("Hello World".indexOf("World")); // 6</pre>
+                        </li>
+                        <li>
+                            <strong>startsWith():</strong> Проверяет, начинается ли строка с указанного значения.
+                            <pre>console.log("JavaScript".startsWith("Java")); // true</pre>
+                        </li>
+                        <li>
+                            <strong>endsWith():</strong> Проверяет, заканчивается ли строка на указанное значение.
+                            <pre>console.log("JavaScript".endsWith("Script")); // true</pre>
+                        </li>
+                        <li>
+                            <strong>slice():</strong> Возвращает подстроку, вырезанную по указанным индексам.
+                            <pre>console.log("JavaScript".slice(0, 4)); // "Java"</pre>
+                        </li>
+                        <li>
+                            <strong>replaceAll():</strong> Заменяет все вхождения подстроки.
+                            <pre>console.log("apple apple".replaceAll("apple", "banana")); // "banana banana"</pre>
+                        </li>
+                        <li>
+                            <strong>padStart():</strong> Дополняет строку указанным символом слева до нужной длины.
+                            <pre>console.log("5".padStart(3, "0")); // "005"</pre>
+                        </li>
+                        <li>
+                            <strong>padEnd():</strong> Дополняет строку указанным символом справа до нужной длины.
+                            <pre>console.log("5".padEnd(3, "0")); // "500"</pre>
+                        </li>
+                        <li>
+                            <strong>trimStart():</strong> Удаляет пробелы в начале строки.
+                            <pre>console.log("   Hello".trimStart()); // "Hello"</pre>
+                        </li>
+                        <li>
+                            <strong>trimEnd():</strong> Удаляет пробелы в конце строки.
+                            <pre>console.log("Hello   ".trimEnd()); // "Hello"</pre>
+                        </li>
                     </ul>
                 </div>
             </div>
+
             <div class="section">
                 <h2 onclick="toggleSection('objects')">Работа с объектами</h2>
                 <div id="objects" class="content">
