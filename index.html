@@ -193,9 +193,72 @@
                             <strong>hasOwnProperty():</strong> Проверяет, есть ли свойство у объекта.
                             <pre>console.log(obj.hasOwnProperty("a")); // true</pre>
                         </li>
+
+
+                        <li>
+                            <strong>JSON.stringify()</strong> — это метод в JavaScript, который преобразует объекты и
+                            массивы в строку формата JSON. Это полезно для передачи данных на сервер или сохранения их в
+                            localStorage.
+                            <pre>
+                            const user = {
+                                name: "Alice",
+                                age: 25,
+                                occupation: "Developer"
+                              };
+                              
+                              // Преобразуем объект в JSON-строку
+                              const jsonString = JSON.stringify(user);
+                              
+                              // Выводим результат
+                              console.log(jsonString);
+                              
+                              //Результат
+                              {"name":"Alice","age":25,"occupation":"Developer"}
+
+                              
+                        </pre>
+                        </li>
+                        <li><strong>JSON.parse()</strong>— это метод в JavaScript, который преобразует строку формата
+                            JSON обратно в JavaScript-объект. Это полезно для обработки данных, полученных с сервера,
+                            или для извлечения данных из хранилища, таких как localStorage.
+
+                            <pre>// JSON-строка
+                                const jsonString = '{"name":"Alice","age":25,"occupation":"Developer"}';
+                                
+                                // Преобразуем JSON-строку в JavaScript-объект
+                                const user = JSON.parse(jsonString);
+                                
+                                // Выводим результат
+                                console.log(user.name);        // Alice
+                                console.log(user.age);         // 25
+                                console.log(user.occupation);  // Developer
+                                
+                                
+
+                            </pre>
+                        </li>
+
+
                         <li>
                             <strong>for...in:</strong> Перебирает свойства объекта.
-                            <pre>for (let key in obj) { console.log(key); }</pre>
+                            <pre>
+                                const user = {
+                                    name: "John",
+                                    age: 30,
+                                    occupation: "Developer"
+                                  };
+                                  
+                                  for (let key in user) {
+                                    console.log(`${key}: ${user[key]}`);
+                                  }
+                                  
+                                  // Результат:
+                                  // name: John
+                                  // age: 30
+                                  // occupation: Developer
+                                  
+                                  
+                            </pre>
                         </li>
                     </ul>
                 </div>
