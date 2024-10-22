@@ -8,6 +8,44 @@ body {
     padding: 20px;
 }
 
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+#search-input {
+    width: 30%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+    background: #1e1e1e;
+    color: #ffcc00;
+}
+
+#search-input:focus {
+    border-color: #1e1e1e;
+    /* Синий цвет при фокусе */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.945);
+}
+
+#search-input::placeholder {
+    color: #ffcc00;
+    opacity: 0.4;
+
+}
+
+#search-input:hover {
+    box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
 
 header {
     text-align: center;
