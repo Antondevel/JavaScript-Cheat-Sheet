@@ -200,20 +200,22 @@
                             массивы в строку формата JSON. Это полезно для передачи данных на сервер или сохранения их в
                             localStorage.
                             <pre>
-                            const user = {
-                                name: "Alice",
-                                age: 25,
-                                occupation: "Developer"
-                              };
-                              
-                              // Преобразуем объект в JSON-строку
-                              const jsonString = JSON.stringify(user);
-                              
-                              // Выводим результат
-                              console.log(jsonString);
-                              
-                              //Результат
-                              {"name":"Alice","age":25,"occupation":"Developer"}
+
+const user = {
+    name: "Alice",
+    age: 25,
+    occupation: "Developer"
+  };
+  
+  // Преобразуем объект в JSON-строку
+  const jsonString = JSON.stringify(user);
+  
+  // Выводим результат
+  console.log(jsonString);
+  
+  // Результат
+  // {"name":"Alice","age":25,"occupation":"Developer"}
+                                                           
 
                               
                         </pre>
@@ -222,16 +224,17 @@
                             JSON обратно в JavaScript-объект. Это полезно для обработки данных, полученных с сервера,
                             или для извлечения данных из хранилища, таких как localStorage.
 
-                            <pre>// JSON-строка
-                                const jsonString = '{"name":"Alice","age":25,"occupation":"Developer"}';
+                            <pre>
+// JSON-строка
+const jsonString = '{"name":"Alice","age":25,"occupation":"Developer"}';
                                 
-                                // Преобразуем JSON-строку в JavaScript-объект
-                                const user = JSON.parse(jsonString);
+// Преобразуем JSON-строку в JavaScript-объект
+const user = JSON.parse(jsonString);
                                 
-                                // Выводим результат
-                                console.log(user.name);        // Alice
-                                console.log(user.age);         // 25
-                                console.log(user.occupation);  // Developer
+// Выводим результат
+console.log(user.name);        // Alice
+console.log(user.age);         // 25
+console.log(user.occupation);  // Developer
                                 
                                 
 
@@ -242,20 +245,20 @@
                         <li>
                             <strong>for...in:</strong> Перебирает свойства объекта.
                             <pre>
-                                const user = {
-                                    name: "John",
-                                    age: 30,
-                                    occupation: "Developer"
-                                  };
-                                  
-                                  for (let key in user) {
-                                    console.log(`${key}: ${user[key]}`);
-                                  }
-                                  
-                                  // Результат:
-                                  // name: John
-                                  // age: 30
-                                  // occupation: Developer
+const user = {
+    name: "John",
+    age: 30,
+    occupation: "Developer"
+  };
+  
+  for (let key in user) {
+    console.log(`${key}: ${user[key]}`);
+  }
+  
+  // Результат:
+  // name: John
+  // age: 30
+  // occupation: Developer
                                   
                                   
                             </pre>
@@ -290,45 +293,45 @@
                         <li>
                             <strong>forEach():</strong> Выполняет заданную функцию для каждого элемента массива.
                             <pre>
-                                const fruits = ["apple", "banana", "cherry", "date"];
+const fruits = ["apple", "banana", "cherry", "date"];
 
-                                fruits.forEach((fruit, index) => {
-                                  console.log(`Fruit ${index + 1}: ${fruit}`);
-                                });
+fruits.forEach((fruit, index) => {
+  console.log(`Fruit ${index + 1}: ${fruit}`);
+});
                                 
-                                // Вывод:
-                                // Fruit 1: apple
-                                // Fruit 2: banana
-                                // Fruit 3: cherry
-                                // Fruit 4: date
+// Вывод:
+// Fruit 1: apple
+// Fruit 2: banana
+// Fruit 3: cherry
+// Fruit 4: date
                                 </pre>
 
                             <pre>
-                                const numbers = [1, 2, 3, 4, 5];
-                                    let sum = 0;
-                                    
-                                    numbers.forEach(number => {
-                                      sum += number;
-                                    });
-                                    
-                                    console.log(`Сумма чисел: ${sum}`); 
-                                    // Вывод: Сумма чисел: 15
+const numbers = [1, 2, 3, 4, 5];
+    let sum = 0;
+    
+    numbers.forEach(number => {
+      sum += number;
+    });
+    
+    console.log(`Сумма чисел: ${sum}`); 
+    // Вывод: Сумма чисел: 15
                             </pre>
                         </li>
                         <li>
                             <strong>map():</strong> Создает новый массив, заполняя его результатами вызова указанной
                             функции для каждого элемента.
                             <pre>
-                                const products = [
-                                    { name: 'Laptop', price: 1000 },
-                                    { name: 'Phone', price: 500 },
-                                    { name: 'Tablet', price: 300 },
-                                ];
+const products = [
+    { name: 'Laptop', price: 1000 },
+    { name: 'Phone', price: 500 },
+    { name: 'Tablet', price: 300 },
+];
+
+// Используем map() для создания нового массива с именами продуктов
+const productNames = products.map(product => product.name);
                                 
-                                // Используем map() для создания нового массива с именами продуктов
-                                const productNames = products.map(product => product.name);
-                                
-                                console.log(productNames); // ['Laptop', 'Phone', 'Tablet']
+console.log(productNames); // ['Laptop', 'Phone', 'Tablet']
                             </pre>
                         </li>
 
@@ -336,20 +339,20 @@
                             <strong>filter():</strong> Создает новый массив с элементами, которые прошли проверку
                             заданной функции.
                             <pre>
-                                const students = [
-                                    { name: 'Alice', age: 22 },
-                                    { name: 'Bob', age: 17 },
-                                    { name: 'Charlie', age: 19 },
-                                    { name: 'David', age: 15 },
-                                ];
+const students = [
+    { name: 'Alice', age: 22 },
+    { name: 'Bob', age: 17 },
+    { name: 'Charlie', age: 19 },
+    { name: 'David', age: 15 },
+];
                                 
-                                // Сначала отфильтруем студентов старше 18 лет
-                                const adults = students.filter(student => student.age > 18);
+// Сначала отфильтруем студентов старше 18 лет
+const adults = students.filter(student => student.age > 18);
                                 
-                                // Теперь получим массив имен этих студентов
-                                const adultNames = adults.map(adult => adult.name);
+// Теперь получим массив имен этих студентов
+const adultNames = adults.map(adult => adult.name);
                                 
-                                console.log(adultNames); // ['Alice', 'Charlie']
+console.log(adultNames); // ['Alice', 'Charlie']
                             </pre>
                         </li>
 
@@ -357,16 +360,15 @@
                             <strong>find():</strong> Возвращает первое значение, удовлетворяющее условию, заданному в
                             функции.
                             <pre>
-                                const users = [
-                                    { name: "John", age: 25 },
-                                    { name: "Alice", age: 30 },
-                                    { name: "Bob", age: 35 }
-                                    ];
+const users = [
+    { name: "John", age: 25 },
+    { name: "Alice", age: 30 },
+    { name: "Bob", age: 35 }
 
-                                const foundUser = users.find(user => user.age > 30);
+const foundUser = users.find(user => user.age > 30);
 
-                                console.log(foundUser); 
-                                // Вывод: { name: "Bob", age: 35 }
+console.log(foundUser); 
+// Вывод: { name: "Bob", age: 35 }
 
                             </pre>
                         </li>
@@ -374,16 +376,16 @@
                             <strong>some():</strong> Проверяет, удовлетворяет ли хотя бы один элемент массива условию,
                             заданному в функции.
                             <pre>
-                                const users = [
-                                    { name: "John", active: false },
-                                    { name: "Alice", active: true },
-                                    { name: "Bob", active: false }
-                                    ];
+const users = [
+    { name: "John", active: false },
+    { name: "Alice", active: true },
+    { name: "Bob", active: false }
+    ];
 
-                                    const hasActiveUser = users.some(user => user.active);
+    const hasActiveUser = users.some(user => user.active);
 
-                                    console.log(hasActiveUser); 
-                                    // Вывод: true
+    console.log(hasActiveUser); 
+    // Вывод: true
                                 </pre>
                         </li>
                         <li>
@@ -394,20 +396,21 @@
 
                         <li>
                             <strong>flat():</strong>Удаляет уровни вложенности в зависимости от указанной глубины.
-                            <pre>// Вложенный массив с двумя уровнями вложенности
-                                const nestedArray = [1, 2, [3, 4, [5, 6]], 7];
+                            <pre>
+// Вложенный массив с двумя уровнями вложенности
+const nestedArray = [1, 2, [3, 4, [5, 6]], 7];
                                 
-                                // Применение flat() без указания глубины (по умолчанию глубина = 1)
-                                const flattenedArray = nestedArray.flat();
+// Применение flat() без указания глубины (по умолчанию глубина = 1)
+const flattenedArray = nestedArray.flat();
                                 
-                                console.log(flattenedArray);
-                                // Результат: [1, 2, 3, 4, [[[[[5, 6]]]]], 7]
+console.log(flattenedArray);
+// Результат: [1, 2, 3, 4, [[[[[5, 6]]]]], 7]
                                 
-                                // Применение flat() с глубиной 2
-                                const fullyFlattenedArray = nestedArray.flat(infinity);
+// Применение flat() с глубиной 2
+const fullyFlattenedArray = nestedArray.flat(infinity);
                                 
-                                console.log(fullyFlattenedArray);
-                                // Результат: [1, 2, 3, 4, 5, 6, 7]
+console.log(fullyFlattenedArray);
+// Результат: [1, 2, 3, 4, 5, 6, 7]
                                 </pre>
                         </li>
 
