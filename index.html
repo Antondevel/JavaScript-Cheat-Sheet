@@ -327,6 +327,27 @@
                             (слева направо) для уменьшения его до одного значения.
                             <pre>let sum = arr.reduce((acc, num) => acc + num, 0); console.log(sum); // 0</pre>
                         </li>
+
+                        <li>
+                            <strong>flat():</strong>Удаляет уровни вложенности в зависимости от указанной глубины.
+                            <pre>// Вложенный массив с двумя уровнями вложенности
+                                const nestedArray = [1, 2, [3, 4, [5, 6]], 7];
+                                
+                                // Применение flat() без указания глубины (по умолчанию глубина = 1)
+                                const flattenedArray = nestedArray.flat();
+                                
+                                console.log(flattenedArray);
+                                // Результат: [1, 2, 3, 4, [[[[[5, 6]]]]], 7]
+                                
+                                // Применение flat() с глубиной 2
+                                const fullyFlattenedArray = nestedArray.flat(infinity);
+                                
+                                console.log(fullyFlattenedArray);
+                                // Результат: [1, 2, 3, 4, 5, 6, 7]
+                                </pre>
+                        </li>
+
+
                     </ul>
                 </div>
             </div>
