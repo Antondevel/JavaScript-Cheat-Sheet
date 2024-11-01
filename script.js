@@ -1,5 +1,3 @@
-
-
 function toggleSection(sectionId) {
     const content = document.getElementById(sectionId);
 
@@ -27,6 +25,19 @@ searchInput.addEventListener('keyup', function (event) {
     const query = event.target.value.toLowerCase();
     const sections = document.querySelectorAll('.section');
 
+    // Удаляем 'highlight' со всех элементов перед началом нового поиска
+    document.querySelectorAll('.highlight').forEach(item => {
+        item.classList.remove('highlight');
+    });
+
+    // Если запрос пуст, показываем все секции и выходим из обработчика
+    if (!query) {
+        sections.forEach(section => {
+            section.style.display = 'block';
+        });
+        return;
+    }
+
     sections.forEach(section => {
         const items = section.querySelectorAll('li');
         let hasMatch = false;
@@ -34,23 +45,15 @@ searchInput.addEventListener('keyup', function (event) {
         items.forEach(item => {
             const text = item.textContent.toLowerCase();
             if (text.includes(query)) {
-                item.classList.add('visible'); // Показываем подходящие элементы
-                item.style.backgroundColor = 'black'; // Выделяем найденный элемент
-                item.style.height = '100%'; // Устанавливаем высоту цветной полоски
-                item.style.paddingTop = '10px'
-                item.style.paddingBottom = '10px'
-                item.style.paddingLeft = '10px'
-                item.style.paddingRight = '10px'
-                item.style.borderRadius = '5px'; // Устанавливаем радиус скругления углов
+                item.classList.add('highlight'); // Добавляем класс только к найденному элементу
                 hasMatch = true; // Отмечаем, что есть совпадение
+
+                // Перемещаем найденный элемент наверх в списке
+                item.parentNode.prepend(item);
             } else {
-                item.classList.remove('visible'); // Скрываем неподходящие элементы
-                item.style.backgroundColor = ''; // Сбрасываем цвет фона
-                item.style.height = ''; // Сбрасываем высоту
-                item.style.borderRadius = ''; // Сбрасываем радиус скругления
+                item.classList.remove('highlight'); // Убираем выделение с неподходящих элементов
             }
         });
-
 
         // Открываем секцию, если есть совпадение
         if (hasMatch) {
@@ -58,6 +61,39 @@ searchInput.addEventListener('keyup', function (event) {
             toggleSection(section.querySelector('h2').getAttribute('onclick').match(/'(.+?)'/)[1]); // Открываем секцию
         } else {
             section.style.display = 'none'; // Скрываем секцию, если нет совпадений
+        }
+    });
+});
+
+// Добавляем стили для highlight-элемента через CSS
+const style = document.createElement('style');
+style.innerHTML = `
+    .highlight {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+`;
+document.head.appendChild(style);
+
+// Получаем все кнопки аккордеона
+const accordionButtons = document.querySelectorAll('.accordion-button');
+
+// Перебираем каждую кнопку и добавляем обработчик события
+accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Получаем родительский элемент для кнопки (секцию)
+        const accordionContent = button.nextElementSibling;
+
+        // Тоглим класс 'active' для кнопки
+        button.classList.toggle('active');
+
+        // Проверяем, открыта ли секция, и меняем её стиль
+        if (accordionContent.style.display === 'block') {
+            accordionContent.style.display = 'none';
+        } else {
+            accordionContent.style.display = 'block';
         }
     });
 });
