@@ -103,6 +103,14 @@
                             <strong>isNaN():</strong> Проверяет, является ли значение NaN.
                             <pre>console.log(isNaN("Hello")); // true</pre>
                         </li>
+                        <li>
+                            <strong>Number.isInteger():</strong> Проверяет, является ли переданное значение целым
+                            числом.
+                            <pre>console.log(Number.isInteger(42)); // true
+                        console.log(Number.isInteger(3.14)); // false
+                        console.log(Number.isInteger('42')); // false</pre>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -185,19 +193,59 @@
                     <ul>
                         <li>
                             <strong>Object.keys():</strong> Возвращает массив ключей объекта.
-                            <pre>const obj = {a: 1, b: 2}; console.log(Object.keys(obj)); // ["a", "b"]</pre>
+                            <pre>
+const user = {
+name: 'Jhon',
+age: 25,
+country: 'USA'
+};
+                            
+const keys = Object.keys(user);
+                            
+console.log(keys); // ['name', 'age', 'country']
+                            </pre>
                         </li>
                         <li>
                             <strong>Object.values():</strong> Возвращает массив значений объекта.
-                            <pre>console.log(Object.values(obj)); // [1, 2]</pre>
+                            <pre>
+const user = {
+name: 'Anton',
+age: 30,
+country: 'Ukraine'
+};
+                            
+const values = Object.values(user);
+                            
+console.log(values); // ['Anton', 30, 'Ukraine']
+                            </pre>
                         </li>
                         <li>
                             <strong>Object.entries():</strong> Возвращает массив пар [ключ, значение].
-                            <pre>console.log(Object.entries(obj)); // [["a", 1], ["b", 2]]</pre>
+                            <pre>
+const user = {
+name: 'Anton',
+age: 30,
+country: 'Ukraine'
+};
+                            
+const entries = Object.entries(user);
+                            
+console.log(entries);
+// [['name', 'Anton'], ['age', 30], ['country', 'Ukraine']]
+                            </pre>
                         </li>
                         <li>
                             <strong>hasOwnProperty():</strong> Проверяет, есть ли свойство у объекта.
-                            <pre>console.log(obj.hasOwnProperty("a")); // true</pre>
+                            <pre>
+const person = {
+    name: 'Anton',
+    age: 30
+};
+                                
+console.log(person.hasOwnProperty('name')); // true
+console.log(person.hasOwnProperty('gender')); // false
+                                
+                            </pre>
                         </li>
 
 
@@ -278,7 +326,12 @@ const user = {
                     <ul>
                         <li>
                             <strong>Array.isArray():</strong> Проверяет, является ли значение массивом.
-                            <pre>console.log(Array.isArray([1, 2, 3])); // true</pre>
+                            <pre>
+console.log(Array.isArray([1, 2, 3]));  // true
+console.log(Array.isArray('Hello'));    // false
+console.log(Array.isArray({a: 1}));     // false
+console.log(Array.isArray([]));          // true
+                                </pre>
                         </li>
                         <li>
                             <strong>push():</strong> Добавляет элемент в конец массива.
@@ -286,15 +339,38 @@ const user = {
                         </li>
                         <li>
                             <strong>pop():</strong> Удаляет последний элемент из массива и возвращает его.
-                            <pre>let last = arr.pop(); console.log(last); // 3</pre>
+                            <pre>
+const fruits = ['apple', 'banana', 'cherry'];
+
+const lastFruit = fruits.pop();
+                                
+console.log(lastFruit); // 'cherry' — удалённый элемент
+console.log(fruits);    // ['apple', 'banana'] — массив после удаления
+                                                     
+                            </pre>
                         </li>
                         <li>
                             <strong>shift():</strong> Удаляет первый элемент из массива и возвращает его.
-                            <pre>let first = arr.shift(); console.log(first); // 1</pre>
+                            <pre>
+ const numbers = [10, 20, 30, 40];
+
+const firstNumber = numbers.shift();
+                                
+ console.log(firstNumber); // 10 — удалённый элемент
+console.log(numbers);     // [20, 30, 40] — массив после удаления
+                                </pre>
                         </li>
                         <li>
                             <strong>unshift():</strong> Добавляет элемент в начало массива.
-                            <pre>arr.unshift(0); console.log(arr); // [0, 1, 2]</pre>
+                            <pre>
+ const colors = ['blue', 'green'];
+
+ const newLength = colors.unshift('red', 'yellow');
+ 
+ console.log(colors);     // ['red', 'yellow', 'blue', 'green']
+ console.log(newLength);  // 4 — новая длина массива
+                                
+                            </pre>
                         </li>
                         <li>
                             <strong>forEach():</strong> Выполняет заданную функцию для каждого элемента массива.
@@ -397,7 +473,22 @@ const users = [
                         <li>
                             <strong>reduce():</strong> Применяет функцию к аккумулятору и каждому элементу массива
                             (слева направо) для уменьшения его до одного значения.
-                            <pre>let sum = arr.reduce((acc, num) => acc + num, 0); console.log(sum); // 0</pre>
+                            <pre>
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0); // начальное значение accumulator — 0
+                                
+console.log(sum); // 15
+                                <pre>
+    const sentence = words.reduce((acc, word) => {
+    return acc + ' ' + word;
+}, ''); // начальное значение — пустая строка
+
+console.log(sentence.trim()); // "Hello world !"
+                                </pre>
+                            </pre>
                         </li>
 
                         <li>
