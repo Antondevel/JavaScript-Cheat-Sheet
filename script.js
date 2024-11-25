@@ -43,8 +43,9 @@ searchInput.addEventListener('keyup', function (event) {
         let hasMatch = false;
 
         items.forEach(item => {
-            const text = item.textContent.toLowerCase();
-            if (text.includes(query)) {
+            const methodText = item.querySelector('strong') ? item.querySelector('strong').textContent.toLowerCase() : ''; // Поиск по методу в <strong>
+
+            if (methodText.includes(query)) {
                 item.classList.add('highlight'); // Добавляем класс только к найденному элементу
                 hasMatch = true; // Отмечаем, что есть совпадение
 
@@ -58,7 +59,8 @@ searchInput.addEventListener('keyup', function (event) {
         // Открываем секцию, если есть совпадение
         if (hasMatch) {
             section.style.display = 'block';
-            toggleSection(section.querySelector('h2').getAttribute('onclick').match(/'(.+?)'/)[1]); // Открываем секцию
+            // Открываем секцию с использованием соответствующей кнопки аккордеона
+            toggleSection(section.querySelector('h2').getAttribute('onclick').match(/'(.+?)'/)[1]);
         } else {
             section.style.display = 'none'; // Скрываем секцию, если нет совпадений
         }
