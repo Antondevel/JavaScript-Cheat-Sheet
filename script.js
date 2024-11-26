@@ -99,3 +99,25 @@ accordionButtons.forEach(button => {
         }
     });
 });
+
+
+
+
+
+// Выбираем все элементы <pre> на странице
+const preElements = document.querySelectorAll('pre');
+
+// Для каждого элемента <pre>
+preElements.forEach(pre => {
+    // Добавляем класс к тегу <pre>
+    pre.classList.add('language-javascript'); // Замените 'your-class-name' на нужное название класса
+    pre.style.backgroundColor = '#1e1e1e';
+    // Проверяем, есть ли уже внутри <pre> элемент <code>
+    if (!pre.querySelector('code')) {
+        // Если нет, оборачиваем содержимое в тег <code>
+        const code = document.createElement('code');
+        code.innerHTML = pre.innerHTML;
+        pre.innerHTML = ''; // Очищаем содержимое <pre>
+        pre.appendChild(code); // Добавляем новый тег <code> внутрь <pre>
+    }
+});

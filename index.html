@@ -10,6 +10,34 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="https://antondevel.github.io/JavaScript-Cheat-Sheet/">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    <style>
+        /* Пример CSS для темы prism-funky */
+        .token.keyword {
+            color: #f92672;
+            /* Фиолетовые для ключевых слов */
+        }
+
+        .token.string {
+            color: #e6db74;
+            /* Золотистые для строк */
+        }
+
+        .token.comment {
+            color: #75715e;
+            /* Серые для комментариев */
+        }
+
+        .token.number {
+            color: #f92672;
+            /* Оранжевые для чисел */
+        }
+
+        .token.function {
+            color: #1ccf57;
+            /* Синие для функций */
+        }
+    </style>
 </head>
 
 <body>
@@ -30,37 +58,46 @@
                     <ul>
                         <li>
                             <strong>document.getElementById():</strong> Возвращает элемент по его ID.
-                            <pre>let element = document.getElementById('myId'); console.log(element);</pre>
+                            <pre>let element = document.getElementById('myId'); 
+                                 console.log(element);</pre>
                         </li>
                         <li>
                             <strong>querySelector():</strong> Возвращает первый элемент, соответствующий указанному
                             CSS-селектору.
-                            <pre>let firstDiv = document.querySelector('div'); console.log(firstDiv);</pre>
+                            <pre>let firstDiv = document.querySelector('div'); 
+                                 console.log(firstDiv);</pre>
                         </li>
                         <li>
                             <strong>addEventListener():</strong> Добавляет обработчик события на элемент.
-                            <pre>element.addEventListener('click', () => { console.log('Clicked!'); });</pre>
+                            <pre>
+element.addEventListener('click', () => { console.log('Clicked!'); });</pre>
                         </li>
                         <li>
                             <strong>setTimeout():</strong> Запускает функцию через заданный промежуток времени.
-                            <pre>setTimeout(() => { console.log('Hello after 1 second'); }, 1000);</pre>
+                            <pre>
+setTimeout(() => { console.log('Hello after 1 second'); }, 1000);</pre>
                         </li>
                         <li>
                             <strong>setInterval():</strong> Выполняет функцию через определенные интервалы времени.
-                            <pre>let intervalId = setInterval(() => { console.log('Every second'); }, 1000);</pre>
+                            <pre>
+let intervalId = setInterval(() => { console.log('Every second'); }, 1000);</pre>
                         </li>
                         <li>
                             <strong>fetch():</strong> Выполняет HTTP-запрос для получения данных.
-                            <pre>fetch('https://api.example.com/data')<br>    .then(response => response.json())<br>    .then(data => console.log(data));</pre>
+                            <pre>fetch('https://api.example.com/data')
+                            <br>.then(response => response.json())
+                            <br>.then(data => console.log(data));</pre>
                         </li>
                         <li>
                             <strong>localStorage:</strong> Позволяет сохранять данные в браузере без срока действия.
-                            <pre>localStorage.setItem('key', 'value');<br>console.log(localStorage.getItem('key')); // 'value'</pre>
+                            <pre>localStorage.setItem('key', 'value');
+                            <br>console.log(localStorage.getItem('key')); // 'value'</pre>
                         </li>
                         <li>
                             <strong>sessionStorage:</strong> Позволяет сохранять данные в браузере, которые будут
                             доступны только в рамках одной сессии.
-                            <pre>sessionStorage.setItem('key', 'value');<br>console.log(sessionStorage.getItem('key')); // 'value'</pre>
+                            <pre>sessionStorage.setItem('key', 'value');
+                            <br>console.log(sessionStorage.getItem('key')); // 'value'</pre>
                         </li>
                         <li>
                             <strong>console.log():</strong> Выводит информацию в консоль браузера.
@@ -106,9 +143,11 @@
                         <li>
                             <strong>Number.isInteger():</strong> Проверяет, является ли переданное значение целым
                             числом.
-                            <pre>console.log(Number.isInteger(42)); // true
-                        console.log(Number.isInteger(3.14)); // false
-                        console.log(Number.isInteger('42')); // false</pre>
+                            <pre>
+console.log(Number.isInteger(42)); // true
+console.log(Number.isInteger(3.14)); // false
+console.log(Number.isInteger('42')); // false
+                            </pre>
                         </li>
 
                     </ul>
@@ -194,56 +233,56 @@
                         <li>
                             <strong>Object.keys():</strong> Возвращает массив ключей объекта.
                             <pre>
-const user = {
-name: 'Jhon',
-age: 25,
-country: 'USA'
-};
+const user = { 
+name: 'Jhon',  
+age: 25,   
+country: 'USA' 
+}; 
                             
 const keys = Object.keys(user);
                             
-console.log(keys); // ['name', 'age', 'country']
+console.log(keys); // ['name', 'age', 'country']   
                             </pre>
                         </li>
                         <li>
                             <strong>Object.values():</strong> Возвращает массив значений объекта.
                             <pre>
-const user = {
-name: 'Anton',
-age: 30,
-country: 'Ukraine'
-};
+const user = { 
+name: 'Anton', 
+age: 30,   
+country: 'Ukraine' 
+}; 
                             
 const values = Object.values(user);
                             
-console.log(values); // ['Anton', 30, 'Ukraine']
+console.log(values); // ['Anton', 30, 'Ukraine']   
                             </pre>
                         </li>
                         <li>
                             <strong>Object.entries():</strong> Возвращает массив пар [ключ, значение].
                             <pre>
-const user = {
-name: 'Anton',
-age: 30,
-country: 'Ukraine'
-};
+const user = { 
+name: 'Anton', 
+age: 30,   
+country: 'Ukraine' 
+}; 
                             
-const entries = Object.entries(user);
+const entries = Object.entries(user);  
                             
-console.log(entries);
+console.log(entries);  
 // [['name', 'Anton'], ['age', 30], ['country', 'Ukraine']]
                             </pre>
                         </li>
                         <li>
                             <strong>hasOwnProperty():</strong> Проверяет, есть ли свойство у объекта.
                             <pre>
-const person = {
-    name: 'Anton',
+const person = {   
+    name: 'Anton', 
     age: 30
-};
+}; 
                                 
 console.log(person.hasOwnProperty('name')); // true
-console.log(person.hasOwnProperty('gender')); // false
+console.log(person.hasOwnProperty('gender')); // false 
                                 
                             </pre>
                         </li>
@@ -255,23 +294,23 @@ console.log(person.hasOwnProperty('gender')); // false
                             localStorage.
                             <pre>
 
-const user = {
-    name: "Alice",
-    age: 25,
+const user = { 
+    name: "Alice", 
+    age: 25,   
     occupation: "Developer"
-  };
-  
-  // Преобразуем объект в JSON-строку
-  const jsonString = JSON.stringify(user);
-  
-  // Выводим результат
-  console.log(jsonString);
-  
-  // Результат
-  // {"name":"Alice","age":25,"occupation":"Developer"}
-                                                           
+  };   
 
-                              
+  // Преобразуем объект в JSON-строку  
+  const jsonString = JSON.stringify(user); 
+
+  // Выводим результат 
+  console.log(jsonString); 
+
+  // Результат 
+  // {"name":"Alice","age":25,"occupation":"Developer"}
+                                                        
+
+                            
                         </pre>
                         </li>
                         <li><strong>JSON.parse()</strong>— это метод в JavaScript, который преобразует строку формата
@@ -279,19 +318,19 @@ const user = {
                             или для извлечения данных из хранилища, таких как localStorage.
 
                             <pre>
-// JSON-строка
+// JSON-строка 
 const jsonString = '{"name":"Alice","age":25,"occupation":"Developer"}';
                                 
-// Преобразуем JSON-строку в JavaScript-объект
-const user = JSON.parse(jsonString);
+// Преобразуем JSON-строку в JavaScript-объект 
+const user = JSON.parse(jsonString);   
                                 
-// Выводим результат
+// Выводим результат   
 console.log(user.name);        // Alice
-console.log(user.age);         // 25
+console.log(user.age);         // 25   
 console.log(user.occupation);  // Developer
                                 
                                 
-
+                            
                             </pre>
                         </li>
 
@@ -299,22 +338,22 @@ console.log(user.occupation);  // Developer
                         <li>
                             <strong>for...in:</strong> Перебирает свойства объекта.
                             <pre>
-const user = {
-    name: "John",
-    age: 30,
+const user = { 
+    name: "John",  
+    age: 30,   
     occupation: "Developer"
-  };
-  
-  for (let key in user) {
-    console.log(`${key}: ${user[key]}`);
+  };   
+
+  for (let key in user) {  
+    console.log(`${key}: ${user[key]}`);   
   }
-  
+
   // Результат:
   // name: John
-  // age: 30
-  // occupation: Developer
-                                  
-                                  
+  // age: 30   
+  // occupation: Developer 
+                                
+                                
                             </pre>
                         </li>
                     </ul>
@@ -327,10 +366,10 @@ const user = {
                         <li>
                             <strong>Array.isArray():</strong> Проверяет, является ли значение массивом.
                             <pre>
-console.log(Array.isArray([1, 2, 3]));  // true
-console.log(Array.isArray('Hello'));    // false
-console.log(Array.isArray({a: 1}));     // false
-console.log(Array.isArray([]));          // true
+console.log(Array.isArray([1, 2, 3])); // true
+console.log(Array.isArray('Hello'));   // false   
+console.log(Array.isArray({a: 1}));    // false   
+console.log(Array.isArray([]));        // true   
                                 </pre>
                         </li>
                         <li>
@@ -340,35 +379,35 @@ console.log(Array.isArray([]));          // true
                         <li>
                             <strong>pop():</strong> Удаляет последний элемент из массива и возвращает его.
                             <pre>
-const fruits = ['apple', 'banana', 'cherry'];
-
+const fruits = ['apple', 'banana', 'cherry'];  
+                            
 const lastFruit = fruits.pop();
                                 
 console.log(lastFruit); // 'cherry' — удалённый элемент
 console.log(fruits);    // ['apple', 'banana'] — массив после удаления
-                                                     
+                                                    
                             </pre>
                         </li>
                         <li>
                             <strong>shift():</strong> Удаляет первый элемент из массива и возвращает его.
                             <pre>
- const numbers = [10, 20, 30, 40];
+const numbers = [10, 20, 30, 40];
 
 const firstNumber = numbers.shift();
                                 
- console.log(firstNumber); // 10 — удалённый элемент
+console.log(firstNumber); // 10 — удалённый элемент
 console.log(numbers);     // [20, 30, 40] — массив после удаления
                                 </pre>
                         </li>
                         <li>
                             <strong>unshift():</strong> Добавляет элемент в начало массива.
                             <pre>
- const colors = ['blue', 'green'];
+const colors = ['blue', 'green'];
 
- const newLength = colors.unshift('red', 'yellow');
+const newLength = colors.unshift('red', 'yellow');
  
- console.log(colors);     // ['red', 'yellow', 'blue', 'green']
- console.log(newLength);  // 4 — новая длина массива
+console.log(colors);     // ['red', 'yellow', 'blue', 'green']
+console.log(newLength);  // 4 — новая длина массива
                                 
                             </pre>
                         </li>
@@ -378,7 +417,7 @@ console.log(numbers);     // [20, 30, 40] — массив после удале
 const fruits = ["apple", "banana", "cherry", "date"];
 
 fruits.forEach((fruit, index) => {
-  console.log(`Fruit ${index + 1}: ${fruit}`);
+console.log(`Fruit ${index + 1}: ${fruit}`);
 });
                                 
 // Вывод:
@@ -393,7 +432,7 @@ const numbers = [1, 2, 3, 4, 5];
     let sum = 0;
     
     numbers.forEach(number => {
-      sum += number;
+    sum += number;
     });
     
     console.log(`Сумма чисел: ${sum}`); 
@@ -481,13 +520,13 @@ const sum = numbers.reduce((accumulator, currentValue) => {
 }, 0); // начальное значение accumulator — 0
                                 
 console.log(sum); // 15
-                                <pre>
-    const sentence = words.reduce((acc, word) => {
+                              
+const sentence = words.reduce((acc, word) => {
     return acc + ' ' + word;
 }, ''); // начальное значение — пустая строка
 
 console.log(sentence.trim()); // "Hello world !"
-                                </pre>
+                                
                             </pre>
                         </li>
 
@@ -571,6 +610,10 @@ console.log(fullyFlattenedArray);
         </div>
     </main>
     <script src="script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
 </body>
 
 </html>
